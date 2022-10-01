@@ -5,8 +5,8 @@ import PlaceItem from "./PlaceItem";
 const PlacesList = ({ places }) => {
   if (!places || !places.length === 0) {
     return (
-      <View styles={styles.fallbackContainer}>
-        <Text styles={styles.fallbackText}>
+      <View style={styles.fallbackContainer}>
+        <Text style={styles.fallbackText}>
           No places added yet - start adding some!
         </Text>
       </View>
