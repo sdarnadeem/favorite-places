@@ -2,3 +2,5 @@ function nit($value) {
     git add .;
     git commit -m $value
 }
+
+gg/
