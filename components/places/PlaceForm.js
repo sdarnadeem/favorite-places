@@ -11,7 +11,7 @@ const PlaceForm = () => {
   }
   return (
     <ScrollView style={styles.form}>
-      <View style={styles.container}>
+      <View>
         <Text style={styles.label}>Title</Text>
         <TextInput
           style={styles.input}
