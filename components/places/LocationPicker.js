@@ -13,6 +13,7 @@ import {
   useRoute,
   useIsFocused,
 } from "@react-navigation/native";
+import Button from "../ui/Button";
 
 const LocationPicker = () => {
   const [pickedLocation, setPickedLocation] = useState(null);

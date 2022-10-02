@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Colors from "../../constants/colors";
 import ImagePicker from "./ImagePicker";
 import LocationPicker from "./LocationPicker";
+import Button from "../ui/Button";
 
 const PlaceForm = () => {
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -23,6 +24,7 @@ const PlaceForm = () => {
       </View>
       <ImagePicker />
       <LocationPicker />
+      <Button>Save Place</Button>
     </ScrollView>
   );
 };
