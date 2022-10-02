@@ -6,15 +6,21 @@ import {
 } from "expo-location";
 import OutlinedButton from "../ui/OutlinedButton";
 import Colors from "../../constants/colors";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import getMapPreview from "../../utils/getMapPreview";
-import { useNavigation } from "@react-navigation/native";
+import {
+  useNavigation,
+  useRoute,
+  useIsFocused,
+} from "@react-navigation/native";
 
 const LocationPicker = () => {
   const [pickedLocation, setPickedLocation] = useState(null);
   const [locationPermissionInformation, requestPermission] =
     useForegroundPermissions();
   const navigation = useNavigation();
+  const route = useRoute();
+  const isFocused = useIsFocused();
 
   async function verifyPermissions() {
     if (
@@ -50,6 +56,16 @@ const LocationPicker = () => {
   function pickOnMapHandler() {
     navigation.navigate("Map");
   }
+
+  useEffect(() => {
+    if (isFocused && route.params) {
+      const mapPickedLocation = route.params && {
+        lat: route.params.selectedLocation.lat,
+        lng: route.params.selectedLocation.lng,
+      };
+      setPickedLocation(mapPickedLocation);
+    }
+  }, [route, isFocused]);
 
   return (
     <View>
