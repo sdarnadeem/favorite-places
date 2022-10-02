@@ -4,14 +4,18 @@ import MapView, { Marker } from "react-native-maps";
 
 const Map = () => {
   const region = {
-    latitude: 0,
-    longitude: 0,
+    latitude: 34.4018279,
+    longitude: 74.3589306,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   };
-  return <MapView initialRegion={region}></MapView>;
+  return <MapView style={styles.map} initialRegion={region}></MapView>;
 };
 
 export default Map;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  map: {
+    flex: 1,
+  },
+});
