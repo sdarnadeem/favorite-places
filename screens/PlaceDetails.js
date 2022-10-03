@@ -1,14 +1,32 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-
-const PlaceDetails = () => {
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import OutlinedButton from "../components/ui/OutlinedButton";
+const PlaceDetails = ({ route }) => {
+  function showOnMapHandler() {}
   return (
-    <View>
-      <Text>PlaceDetails</Text>
-    </View>
+    <ScrollView>
+      <Image />
+      <View>
+        <View>
+          <Text>ADDRESS</Text>
+        </View>
+        <OutlinedButton icon="map" onPress={showOnMapHandler}>
+          View on Map
+        </OutlinedButton>
+      </View>
+    </ScrollView>
   );
 };
 
 export default PlaceDetails;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    alignItems: "center",
+  },
+  image: {
+    height: "35%",
+    minHeight: 300,
+    width: "100%",
+  },
+  location: {},
+});

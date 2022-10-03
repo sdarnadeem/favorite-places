@@ -3,7 +3,6 @@ import React from "react";
 import Colors from "../../constants/colors";
 
 const PlaceItem = ({ place, onSelect }) => {
-  console.log(place);
   return (
     <Pressable
       style={({ pressed }) => [styles.item, pressed && styles.pressed]}
