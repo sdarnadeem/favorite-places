@@ -49,6 +49,7 @@ const Map = ({ navigation, route }) => {
   }, [navigation, savePickedLocationHandler, initialLocation]);
 
   function selectLocationHandler(event) {
+    if (initialLocation) return;
     const lat = event.nativeEvent.coordinate.latitude;
     const lng = event.nativeEvent.coordinate.longitude;
 
