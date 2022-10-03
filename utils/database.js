@@ -101,7 +101,8 @@ export function fetchPlaceDetails(id) {
           const place = new Place(
             dbPlace.title,
             dbPlace.imageUri,
-            { lat: dbPlace.lat, lng: dbPlace.lng, address: dbPlace.address },
+            dbPlace.address,
+            { lat: dbPlace.lat, lng: dbPlace.lng },
             dbPlace.id
           );
           resolve(place);
