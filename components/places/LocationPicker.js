@@ -15,7 +15,7 @@ import {
 } from "@react-navigation/native";
 import Button from "../ui/Button";
 
-const LocationPicker = () => {
+const LocationPicker = ({ onLocationPick }) => {
   const [pickedLocation, setPickedLocation] = useState(null);
   const [locationPermissionInformation, requestPermission] =
     useForegroundPermissions();
@@ -67,6 +67,10 @@ const LocationPicker = () => {
       setPickedLocation(mapPickedLocation);
     }
   }, [route, isFocused]);
+
+  useEffect(() => {
+    onLocationPick(pickedLocation);
+  }, [pickedLocation, pickedLocation]);
 
   return (
     <View>
