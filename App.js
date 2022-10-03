@@ -12,7 +12,9 @@ export default function App() {
       try {
         await init();
         setDbInitialized(true);
-      } catch (e) {}
+      } catch (e) {
+        console.log(err);
+      }
     }
     db();
   }, []);
