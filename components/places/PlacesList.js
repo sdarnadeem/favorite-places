@@ -18,7 +18,7 @@ const PlacesList = ({ places }) => {
       data={places}
       keyExtractor={(place) => place.id}
       renderItem={({ item }) => {
-        <PlaceItem place={item} onSelect={() => {}} />;
+        return <PlaceItem place={item} onSelect={() => {}} />;
       }}
     ></FlatList>
   );
