@@ -1,9 +1,17 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 
 import PlacesList from "../components/places/PlacesList";
+import { useIsFocused } from "@react-navigation/native";
 
 const AllPlaces = () => {
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    if (isFocused && route.params) {
+    }
+  }, [isFocused, route]);
+
   return <PlacesList />;
 };
 
