@@ -69,8 +69,8 @@ export function fetchPlaces() {
               new Place(
                 dp.title,
                 dp.imageUri,
+                dp.address,
                 {
-                  address: dp.address,
                   lat: dp.lat,
                   lng: dp.lng,
                 },
