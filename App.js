@@ -13,6 +13,8 @@ export default function App() {
         await init();
         setDbInitialized(true);
       } catch (e) {
+        setDbInitialized(true);
+
         console.log(err);
       }
     }
