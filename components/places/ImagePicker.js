@@ -38,14 +38,21 @@ const ImagePicker = ({ onImageTake }) => {
 
     if (!hasPermission) return;
 
-    const image = await launchCameraAsync({
-      allowsEditing: true,
-      aspect: [16, 9],
-      quality: 0.5,
-    });
+    try {
+      const image = await launchCameraAsync({
+        allowsEditing: true,
+        aspect: [16, 9],
+        quality: 0.5,
+      });
+      console.log("run");
 
-    setPickedImage(image.uri);
-    onImageTake(image.uri);
+      console.log(image);
+
+      setPickedImage(image.uri);
+      onImageTake(image.uri);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   let imagePreview = <Text>No image is taken yet</Text>;
